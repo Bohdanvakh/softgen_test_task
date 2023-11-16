@@ -50,6 +50,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  # Use Pry-Rails for degugging [https://github.com/pry/pry-rails]
+  gem 'pry-rails', '~> 0.3.9'
 end
 
 group :development do

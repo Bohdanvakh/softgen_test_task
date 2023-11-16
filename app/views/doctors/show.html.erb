@@ -2,3 +2,14 @@
 <h2><%= @doctor.first_name %></h2>
 <h2><%= @doctor.last_name %></h2>
 <h4>Category: <%= @doctor.category.name %></h4>
+
+<% @patients.each do |patient| %>
+    <%= patient.first_name %>
+    <%= patient.last_name %>
+
+    <% patient.appointments.each do |appointment| %>
+        <p><%= appointment.recommendation %></p>
+        <p><%= appointment.appointment_date %></p>
+    <% end %>
+    <hr>
+<% end %>
