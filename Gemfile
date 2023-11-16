@@ -14,6 +14,9 @@ gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# Use the Devise for registration users [https://github.com/heartcombo/devise]
+gem 'devise', '~> 4.9', '>= 4.9.3'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
