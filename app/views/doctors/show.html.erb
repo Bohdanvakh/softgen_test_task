@@ -1,4 +1,5 @@
 <h1>Doctor Profile <%= @doctor.id %></h1>
+<%= button_to "Sign Out", destroy_doctor_session_path, method: :delete %>
 <h2><%= @doctor.first_name %></h2>
 <h2><%= @doctor.last_name %></h2>
 <h4>Category: <%= @doctor.category.name %></h4>
