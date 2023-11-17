@@ -11,7 +11,7 @@
         <p><%= appointment.recommendation %></p>
         <p><%= appointment.appointment_date %></p>
         <% if appointment.appointment_date.presence %>
-            <% if appointment.appointment_date < Time.now + 1.hour %>
+            <% if appointment.appointment_date < Time.now %>
                 <p>Add recommendation</p>
                 <%= link_to "Add_recommendation", edit_appointment_path(appointment.id) %>
             <% else %>
