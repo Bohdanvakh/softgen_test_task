@@ -1,4 +1,6 @@
 <p>Edit appointment page</p>
 <p><%= @appointment.id %></p>
+<p>Doctor ID: <%= @appointment.doctor_id %></p>
+<p>Patient ID: <%= @appointment.patient_id %></p>
 
 <%= render "partials/form", appointment: @appointment %>
