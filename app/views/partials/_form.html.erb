@@ -1,0 +1,9 @@
+<%= form_with(model: appointment) do |f| %>
+    <div>
+        <%= f.label :recommendation %>
+        <%= f.text_field :recommendation %>
+    </div>
+
+    <%= f.submit %>
+<% end %>
+

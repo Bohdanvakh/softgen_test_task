@@ -10,6 +10,17 @@
     <% patient.appointments.each do |appointment| %>
         <p><%= appointment.recommendation %></p>
         <p><%= appointment.appointment_date %></p>
+        <% if appointment.appointment_date.presence %>
+            <% if appointment.appointment_date < Time.now + 1.hour %>
+                <p>Add recommendation</p>
+                <%= link_to "Add_recommendation", edit_appointment_path(appointment.id) %>
+            <% else %>
+                <p>You can't add recommendation</p>
+            <% end %>
+        <% else %>
+            <p>No date</p>
+        <% end %>
     <% end %>
     <hr>
+    <br>
 <% end %>
