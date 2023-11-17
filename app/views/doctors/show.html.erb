@@ -3,24 +3,15 @@
 <h2><%= @doctor.last_name %></h2>
 <h4>Category: <%= @doctor.category.name %></h4>
 
-<% @patients.each do |patient| %>
-    <%= patient.first_name %>
-    <%= patient.last_name %>
-
-    <% patient.appointments.each do |appointment| %>
-        <p><%= appointment.recommendation %></p>
-        <p><%= appointment.appointment_date %></p>
-        <% if appointment.appointment_date.presence %>
-            <% if appointment.appointment_date < Time.now %>
-                <p>Add recommendation</p>
-                <%= link_to "Add_recommendation", edit_appointment_path(appointment.id) %>
-            <% else %>
-                <p>You can't add recommendation</p>
-            <% end %>
-        <% else %>
-            <p>No date</p>
-        <% end %>
-    <% end %>
+<% @appointments.each do |appointment| %>
     <hr>
+    <%= appointment.patient.first_name.presence || "No first name" %>
+    <%= appointment.patient.last_name.presence || "No last name" %>
+    <br>
+    <%= appointment.recommendation.presence || "No recommendation" %>
+    <br>
+    <%= appointment.appointment_date ? appointment.appointment_date.strftime("%m/%d/%Y %I:%M %p") : "No date" %>
+    <br>
+    <%= link_to "Add_recommendation", edit_appointment_path(appointment.id) %>
     <br>
 <% end %>

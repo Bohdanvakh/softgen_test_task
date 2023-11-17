@@ -6,6 +6,7 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
-    @patients = @doctor.patients.includes(:appointments)
+
+    @appointments = @doctor.appointments.includes(:patient).where(patients: { appointments: { recommendation: nil } })
   end
 end
