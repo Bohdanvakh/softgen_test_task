@@ -1,6 +1,10 @@
 class AppointmentsController < ApplicationController
   def edit
     @appointment = Appointment.find(params[:id])
+
+    if @appointment.doctor_id != current_doctor.id
+      redirect_to doctor_path(current_doctor)
+    end
   end
 
   def update
