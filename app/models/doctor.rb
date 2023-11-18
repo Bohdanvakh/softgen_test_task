@@ -9,4 +9,6 @@ class Doctor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  scope :by_category, -> (category) { where(category_id: category) if category.present? }
 end
