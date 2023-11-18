@@ -2,3 +2,6 @@
 <%= button_to "Sign Out", destroy_patient_session_path, method: :delete %>
 <h2><%= @patient.first_name %></h2>
 <h2><%= @patient.last_name %></h2>
+
+<%= render 'partials/filter_form', patient: patient_path %>
+<%= render 'partials/doctors', doctors: @doctors %>

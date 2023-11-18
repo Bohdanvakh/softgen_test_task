@@ -1,0 +1,5 @@
+<% doctors.each do |doctor| %>
+    <p>Doctor ID: <%= doctor.id %></p>
+    <p><%= doctor.first_name || "Doesn't have a first name" %></p>
+    <p><%= doctor.last_name || "Doesn't have a last name" %></p>
+<% end %>

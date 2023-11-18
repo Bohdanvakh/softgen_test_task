@@ -113,6 +113,9 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    has_scope (0.8.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -268,6 +271,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9, >= 4.9.3)
   error_highlight (>= 0.4.0)
+  has_scope (~> 0.8.2)
   importmap-rails
   jbuilder
   pry-rails (~> 0.3.9)
