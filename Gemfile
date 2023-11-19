@@ -50,6 +50,9 @@ gem "bootsnap", require: false
 # Use has_scope for filtering query [https://github.com/elastic/elasticsearch-rails]
 gem 'has_scope', '~> 0.8.2'
 
+# Use Cancancan for allow to access [https://github.com/CanCanCommunity/cancancan]
+gem 'cancancan', '~> 3.5'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
