@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :find_appointment, only: [:edit, :update]
 
   def new
     @appointment = Appointment.new
@@ -16,16 +17,12 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointment = Appointment.find(params[:id])
-
     if @appointment.doctor_id != current_doctor.id
       redirect_to doctor_path(current_doctor)
     end
   end
 
   def update
-    @appointment = Appointment.find(params[:id])
-
     if @appointment.update(appointment_params)
       redirect_to doctor_path(current_doctor)
     else
@@ -37,5 +34,9 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:doctor_id, :patient_id, :appointment_date, :recommendation)
+  end
+
+  def find_appointment
+    @appointment = Appointment.find(params[:id])
   end
 end
