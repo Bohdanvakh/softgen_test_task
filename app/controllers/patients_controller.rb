@@ -1,8 +1,8 @@
 class PatientsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_patient!
   before_action :find_patient, only: [:show]
-
-  load_and_authorize_resource
 
   has_scope :by_category
 

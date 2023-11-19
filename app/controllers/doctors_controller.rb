@@ -1,8 +1,8 @@
 class DoctorsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_doctor!
   before_action :find_doctor, only: [:show]
-
-  load_and_authorize_resource
 
   def index
   end
