@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   resources :patients
   resources :appointments
 
-  get "/doctors/home", to: 'doctors#index'
-  get "/patients/home", to: 'patients#index'
+  get '/doctors/home', to: 'doctors#index'
+  get '/patients/home', to: 'patients#index'
 
   # Defines the root path route ("/")
-  # root "doctors#index"
+
+  get '/permission_denied', to: 'home#error'
 end
