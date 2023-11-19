@@ -10,6 +10,7 @@
 
 <% @appointments.each do |appointment| %>
     <p><%= appointment.recommendation %></p>
+    <p><%= appointment.appointment_date %></p>
     <p><%= appointment.doctor.first_name %></p>
     <p><%= appointment.doctor.last_name %></p>
     <p><%= appointment.doctor.category.name %></p>
