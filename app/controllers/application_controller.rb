@@ -9,4 +9,14 @@ class ApplicationController < ActionController::Base
     user = current_patient || current_doctor
     @current_ability ||= ::Ability.new(user)
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(Doctor)
+      doctor_path(resource)
+    elsif resource.is_a?(Patient)
+      patient_path(resource)
+    else
+      super
+    end
+  end
 end
