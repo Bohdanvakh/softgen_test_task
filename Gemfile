@@ -44,6 +44,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem 'sassc', '~> 2.4'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -52,6 +54,9 @@ gem 'has_scope', '~> 0.8.2'
 
 # Use Cancancan for allow to access [https://github.com/CanCanCommunity/cancancan]
 gem 'cancancan', '~> 3.5'
+
+# Use ActiveAdmin for providing admin [https://github.com/activeadmin/activeadmin]
+gem 'activeadmin', '~> 3.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
