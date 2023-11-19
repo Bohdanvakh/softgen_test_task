@@ -5,3 +5,13 @@
 
 <%= render 'partials/filter_form', patient: patient_path %>
 <%= render 'partials/doctors', doctors: @doctors %>
+
+<h2>Recommendations:</h2>
+
+<% @appointments.each do |appointment| %>
+    <p><%= appointment.recommendation %></p>
+    <p><%= appointment.doctor.first_name %></p>
+    <p><%= appointment.doctor.last_name %></p>
+    <p><%= appointment.doctor.category.name %></p>
+    <hr>
+<% end %>

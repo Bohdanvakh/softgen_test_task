@@ -9,5 +9,6 @@ class PatientsController < ApplicationController
   def show
     @patient = Patient.find(params[:id])
     @doctors = apply_scopes(Doctor).all
+    @appointments = @patient.appointments.includes(:doctor)
   end
 end
