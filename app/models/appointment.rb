@@ -9,4 +9,8 @@ class Appointment < ApplicationRecord
       errors.add(:base, "Doctor currently has the maximum number of appointments")
     end
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    super
+  end
 end
