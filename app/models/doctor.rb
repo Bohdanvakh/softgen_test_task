@@ -1,7 +1,7 @@
 class Doctor < ApplicationRecord
   include DeviseMethods
 
-  belongs_to :category
+  belongs_to :category, optional: true
   has_many :appointments
   has_many :patients, through: :appointments
 
