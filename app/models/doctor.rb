@@ -12,6 +12,8 @@ class Doctor < ApplicationRecord
 
   scope :by_category, -> (category) { where(category_id: category) if category.present? }
 
+  validates :phone, presence: true, length: { is: 10 }
+
   def self.ransackable_associations(auth_object = nil)
     ["appointments", "category", "patients"]
   end
