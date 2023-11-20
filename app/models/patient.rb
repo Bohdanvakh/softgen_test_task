@@ -9,6 +9,8 @@ class Patient < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :phone, presence: true, length: { is: 10 }
+
   def self.ransackable_associations(auth_object = nil)
     super + %w["appointments", "doctors"]
   end
