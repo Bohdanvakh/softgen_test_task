@@ -11,4 +11,12 @@ class Doctor < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   scope :by_category, -> (category) { where(category_id: category) if category.present? }
+
+  def self.ransackable_associations(auth_object = nil)
+    ["appointments", "category", "patients"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    super + %w[first_name last_name]
+  end
 end
