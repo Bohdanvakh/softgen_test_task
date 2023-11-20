@@ -5,7 +5,7 @@ ActiveAdmin.register Doctor do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :first_name, :last_name, :phone, :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :category_id
+  permit_params :first_name, :last_name, :phone, :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :category_id
   #
   # or
   #
