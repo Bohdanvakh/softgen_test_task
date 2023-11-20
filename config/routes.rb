@@ -6,14 +6,11 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :doctors
-  resources :patients
-  resources :appointments
+  resources :doctors, only: [:index, :show]
+  resources :patients, only: [:index, :show]
+  resources :appointments, only: [:new, :create, :edit, :update]
 
   get '/doctors/home', to: 'doctors#index'
   get '/patients/home', to: 'patients#index'
-
-  # Defines the root path route ("/")
-
   get '/permission_denied', to: 'home#error'
 end
