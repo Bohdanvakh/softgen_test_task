@@ -1,0 +1,10 @@
+<h1 class="title"><%= t('introdyction') %></h1>
+<div class="registration_container">
+    <p>SignUp as:</p>
+    <div class="registration_block">
+        <p class="link_doctor"><%= link_to "Doctor", new_doctor_registration_path %></p>
+        <p class="link_patient"><%= link_to "Patient", new_patient_registration_path %></p>
+    </div>
+</div>
+
+<p class="link_admin"><%= link_to "Admin panel", new_admin_user_session_path %></p>

@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ #body {
+    width: 100%;
+    height: 100%;
+ }
+
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+.registration_container {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    display: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.registration_block {
+    display: flex;
+    gap: 40px;
+}
+
+.link_doctor {
+    margin-left: auto;
+}
+
+.link_patient {
+    margin-right: auto;
+}
+
+.link_admin {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}

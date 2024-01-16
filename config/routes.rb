@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/doctors/home', to: 'doctors#index'
   get '/patients/home', to: 'patients#index'
   get '/permission_denied', to: 'home#error'
+  root to: 'home#root'
 end
