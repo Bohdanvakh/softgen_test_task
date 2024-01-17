@@ -7,6 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-AdminUser.create!(email: 'admin@example.com', phone: '1234567890', password: 'password', password_confirmation: 'password') if Rails.env.development?
-Doctor.create!(email: 'doctor@example.com', phone: '0987654321', password: 'password', password_confirmation: 'password') if Rails.env.development?
-Patient.create!(email: 'patient@example.com', phone: '0000000001', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', phone: '1234567890', password: 'password', password_confirmation: 'password')
+  Doctor.create!(email: 'doctor@example.com', phone: '0987654321', password: 'password', password_confirmation: 'password')
+  Patient.create!(email: 'patient@example.com', phone: '0000000001', password: 'password', password_confirmation: 'password')
+  Category.create!(name: 'therapist')
+  Category.create!(name: 'dentist')
+end
