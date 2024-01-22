@@ -1,0 +1,18 @@
+%h1
+  Doctor Profile #{@doctor.id}
+= button_to "Sign Out", destroy_doctor_session_path, method: :delete
+%h2= @doctor.first_name
+%h2= @doctor.last_name
+%h4
+  Category: #{@doctor.category.name}
+- @appointments.each do |appointment|
+  %hr/
+  = appointment.patient.first_name.presence || "No first name"
+  = appointment.patient.last_name.presence || "No last name"
+  %br/
+  = appointment.recommendation.presence || "No recommendation"
+  %br/
+  = appointment.appointment_date ? appointment.appointment_date.strftime("%m/%d/%Y %I:%M %p") : "No date"
+  %br/
+  = link_to "Add_recommendation", edit_appointment_path(appointment.id)
+  %br/

@@ -1,0 +1,16 @@
+.user_header
+  %h1
+    Patient Profile #{@patient.id}
+  = button_to "Sign Out", destroy_patient_session_path, method: :delete
+%h2= @patient.first_name
+%h2= @patient.last_name
+= render 'partials/filter_form', patient: patient_path
+= render 'partials/doctors', doctors: @doctors
+%h2 Recommendations:
+- @appointments.each do |appointment|
+  %p= appointment.recommendation
+  %p= appointment.appointment_date
+  %p= appointment.doctor.first_name
+  %p= appointment.doctor.last_name
+  %p= appointment.doctor.category.name
+  %hr/

@@ -1,6 +1,0 @@
-<%= form_tag(patient, method: :get) do %>
-    <%= label_tag :category %>
-    <%= select_tag :by_category, options_for_select(Category.all.map { |c| [c.name, c.id] }, params[:by_category]), include_blank: "Select" %>
-
-    <%= submit_tag :filter %>
-<% end %>
