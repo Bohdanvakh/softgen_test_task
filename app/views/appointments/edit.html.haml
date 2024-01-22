@@ -1,0 +1,7 @@
+%p Edit appointment page
+%p= @appointment.id
+%p
+  Doctor ID: #{@appointment.doctor_id}
+%p
+  Patient ID: #{@appointment.patient_id}
+= render "partials/form", appointment: @appointment

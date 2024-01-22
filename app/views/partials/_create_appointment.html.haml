@@ -1,0 +1,7 @@
+= form_with(model: appointment) do |f|
+  = f.hidden_field  :doctor_id, value: @doctor_id
+  = f.hidden_field  :patient_id, value: current_patient.id
+  %div
+    = f.label :appointment_date
+    = f.datetime_field :appointment_date
+  = f.submit

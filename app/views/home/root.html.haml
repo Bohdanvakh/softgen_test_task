@@ -1,0 +1,7 @@
+%h1.title= t('introdyction')
+.registration_container
+  %p SignUp as:
+  .registration_block
+    %p.link_doctor= link_to "Doctor", new_doctor_registration_path
+    %p.link_patient= link_to "Patient", new_patient_registration_path
+%p.link_admin= link_to "Admin panel", new_admin_user_session_path

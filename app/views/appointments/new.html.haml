@@ -1,0 +1,6 @@
+%p Create an appointment with
+%h3
+  = @doctor.first_name || "Doesn't have a first name"
+  = @doctor.last_name || "Doesn't have a last name"
+%h3= @doctor.category.name
+= render 'partials/create_appointment', appointment: @appointment
